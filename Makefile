@@ -41,8 +41,8 @@ _login:
 
 _push-latest:
 	@echo Create tag: [${APP_NAME}:${TAG}]
-	docker tag ${APP_NAME} ${DOCKER_REPO}/${APP_NAME}:latest
-	docker push ${DOCKER_REPO}/${APP_NAME}:latest
+	docker tag ${APP_NAME} ${APP_NAME}:latest
+	docker push ${APP_NAME}:latest
 
 
 

@@ -6,7 +6,7 @@ ARG CASSANDRA_LUCENE_INDEX_VERSION
 RUN apt-get update
 RUN /usr/bin/apt install  -y curl git gnupg
 
-RUN echo "deb http://debian.xtdv.net/debian sid main" > /etc/apt/sources.list.d/debian-sid-main.sources.list
+RUN echo "deb http://ftp.debian.org/debian sid main" > /etc/apt/sources.list.d/debian-sid-main.sources.list
 RUN echo "deb http://www.apache.org/dist/cassandra/debian 311x main" > /etc/apt/sources.list.d/cassandra.sources.list
 
 RUN curl -fsSL https://www.apache.org/dist/cassandra/KEYS | apt-key add -
@@ -15,7 +15,7 @@ RUN curl -fsSLO "https://github.com/mikefarah/yq/releases/download/3.3.0/yq_linu
 RUN mkdir -p /usr/share/man/man1
 RUN /usr/bin/apt install  -y --no-install-recommends openjdk-8-jdk cassandra maven
 RUN update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
-RUN git clone http://github.com/Stratio/cassandra-lucene-index && cd cassandra-lucene-index && git checkout ${CASSANDRA_LUCENE_INDEX_VERSION} && mvn clean package
+RUN git clone https://github.com/Stratio/cassandra-lucene-index && cd cassandra-lucene-index && git checkout ${CASSANDRA_LUCENE_INDEX_VERSION} && mvn clean package
 
 
 FROM bitnami/cassandra:latest
