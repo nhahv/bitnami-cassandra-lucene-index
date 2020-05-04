@@ -1,0 +1,1 @@
+# bitnami-cassandra-lucene-index
