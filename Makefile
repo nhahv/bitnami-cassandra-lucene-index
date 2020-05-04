@@ -1,4 +1,4 @@
-export APP_NAME=nhahv/bitnami-cassandra-lucene-index
+export APP_NAME=viettelco/bitnami-cassandra-lucene-index
 export CONTAINER_NAME=$(subst /,-,$(APP_NAME))
 
 ifeq ("$(wildcard $(/var/run/docker.sock))","")
