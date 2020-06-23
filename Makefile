@@ -9,7 +9,7 @@ endif
 ifdef repo
 export DOCKER_REPO=${repo}
 else
-export DOCKER_REPO=docker.io
+export DOCKER_REPO=::wdocker.io
 endif
 
 ifdef tag
