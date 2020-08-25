@@ -23,3 +23,4 @@ ARG CASSANDRA_LUCENE_INDEX_VERSION
 COPY vietnamese_analyzer/models /models
 COPY vietnamese_analyzer/*.jar /opt/cassandra/lib/
 COPY --from=debian-for-dev /cassandra-lucene-index/plugin/target/cassandra-lucene-index-plugin-${CASSANDRA_LUCENE_INDEX_VERSION}.jar /opt/cassandra/lib
+RUN sed -i -r 's/enable_user_defined_functions=false/enable_user_defined_functions=true/' /etc/cassandra/cassandra.yaml
