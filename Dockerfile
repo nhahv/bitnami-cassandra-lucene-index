@@ -13,7 +13,7 @@ RUN curl -fsSL https://www.apache.org/dist/cassandra/KEYS | apt-key add -
 RUN apt-get update
 RUN curl -fsSLO "https://github.com/mikefarah/yq/releases/download/3.3.0/yq_linux_amd64" && chmod +x ./yq_linux_amd64 && mv ./yq_linux_amd64 /usr/local/bin/yq
 RUN mkdir -p /usr/share/man/man1
-RUN /usr/bin/apt install  -y --no-install-recommends openjdk-8-jdk cassandra maven
+RUN /usr/bin/apt install  -y --no-install-recommends openjdk-8-jdk python cassandra maven
 RUN update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 RUN git clone https://github.com/Stratio/cassandra-lucene-index && cd cassandra-lucene-index && git checkout ${CASSANDRA_LUCENE_INDEX_VERSION} && mvn clean package
 
