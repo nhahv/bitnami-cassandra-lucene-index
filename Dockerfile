@@ -18,7 +18,7 @@ RUN update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/jav
 RUN git clone https://github.com/Stratio/cassandra-lucene-index && cd cassandra-lucene-index && git checkout ${CASSANDRA_LUCENE_INDEX_VERSION} && mvn clean package
 
 
-FROM cassandra:3.11.6
+FROM bitnami/cassandra:3.11.2
 ARG CASSANDRA_LUCENE_INDEX_VERSION
 COPY vietnamese_analyzer/models /models
 COPY vietnamese_analyzer/*.jar /opt/cassandra/lib/
